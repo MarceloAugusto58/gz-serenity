@@ -1,0 +1,24 @@
+
+> gz-serenity@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.29
+  - Local:        http://localhost:3002
+
+ ✓ Starting...
+ ✓ Ready in 2.6s
+ ○ Compiling / ...
+ ✓ Compiled / in 4.9s (1278 modules)
+ GET / 200 in 5169ms
+ ✓ Compiled in 418ms (629 modules)
+ ✓ Compiled in 634ms (629 modules)
+ ✓ Compiled in 190ms (629 modules)
+ ✓ Compiled in 197ms (629 modules)
+ ✓ Compiled in 276ms (629 modules)
+ ✓ Compiled in 329ms (629 modules)
+ ✓ Compiled in 163ms (629 modules)
+ ✓ Compiled in 176ms (629 modules)
+ ✓ Compiled in 397ms (629 modules)
+ ✓ Compiled in 162ms (629 modules)
+ ✓ Compiled in 239ms (629 modules)
+ ✓ Compiled in 222ms (629 modules)
