@@ -18,6 +18,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://gz-serenity.vercel.app"),
   title: "Massoterapeuta em Dourados MS | GZ Serenity - Grizi Capasso",
   description:
     "Massagem terapêutica integrativa em Dourados MS. Terapias que acolhem, aliviam e transformam. Agende com a Grizi Capasso - GZ Serenity | Clínica Bella Face.",
@@ -36,6 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "pt_BR",
+    url: "https://gz-serenity.vercel.app",
     title: "Massoterapeuta em Dourados MS | GZ Serenity - Grizi Capasso",
     description: "Massagem terapêutica integrativa em Dourados MS. Terapias que acolhem, aliviam e transformam.",
     siteName: "GZ Serenity | Clínica Bella Face",
@@ -52,7 +54,7 @@ const jsonLd = {
   "@type": "LocalBusiness",
   name: "GZ Serenity | Clínica Bella Face",
   description: "Massagem terapêutica integrativa em Dourados, MS.",
-  url: "https://gzserenity.com.br",
+  url: "https://gz-serenity.vercel.app",
   telephone: "+55-67-99642-8381",
   address: {
     "@type": "PostalAddress",
