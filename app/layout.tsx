@@ -71,6 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pt-BR" className={`${inter.variable} ${playfair.variable}`}>
       <head>
         <meta name="google-site-verification" content="qzcA_n5WQKvP04Ol5G00lUG6R12Gs8r6jY4xxxfFJtg" />
+        <meta name="msvalidate.01" content="DA1DA524F76534E5E08B1D8FF7072BA9" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
