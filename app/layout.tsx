@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
@@ -17,15 +17,22 @@ const playfair = Playfair_Display({
   style: ["normal", "italic"],
 });
 
+const SITE_URL = "https://gz-serenity.vercel.app";
+const SITE_NAME = "GZ Serenity";
+const TITLE = "Massoterapeuta em Dourados MS | GZ Serenity - Grizi Capasso";
+const DESCRIPTION =
+  "Massagem terapêutica e relaxante em Dourados MS com a massoterapeuta Grizi Capasso. Alívio de dores, tensões e estresse. Agende pelo WhatsApp na GZ Serenity | Clínica Bella Face.";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://gz-serenity.vercel.app"),
-  title: "Massoterapeuta em Dourados MS | GZ Serenity - Grizi Capasso",
-  description:
-    "Massagem terapêutica integrativa em Dourados MS. Terapias que acolhem, aliviam e transformam. Agende com a Grizi Capasso - GZ Serenity | Clínica Bella Face.",
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
+  applicationName: SITE_NAME,
   keywords: [
     "massoterapeuta Dourados",
     "massagem Dourados MS",
     "massagem terapêutica Dourados",
+    "massagem relaxante Dourados",
     "clínica de massagem Dourados MS",
     "GZ Serenity",
     "Grizi Capasso",
@@ -33,14 +40,22 @@ export const metadata: Metadata = {
     "Clínica Bella Face Dourados",
   ],
   authors: [{ name: "Grizi Capasso" }],
-  creator: "GZ Serenity",
+  creator: SITE_NAME,
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://gz-serenity.vercel.app",
-    title: "Massoterapeuta em Dourados MS | GZ Serenity - Grizi Capasso",
-    description: "Massagem terapêutica integrativa em Dourados MS. Terapias que acolhem, aliviam e transformam.",
-    siteName: "GZ Serenity | Clínica Bella Face",
+    url: SITE_URL,
+    title: TITLE,
+    description: DESCRIPTION,
+    siteName: SITE_NAME,
+    images: [{ url: "/grizi-hero.jpg", alt: "Grizi Capasso, massoterapeuta em Dourados MS" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/grizi-hero.jpg"],
   },
   robots: {
     index: true,
@@ -49,21 +64,57 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#3D1F5C",
+};
+
+// WebSite define o nome exibido no Google (em vez de "Vercel");
+// HealthAndBeautyBusiness alimenta o resultado local.
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: "GZ Serenity | Clínica Bella Face",
-  description: "Massagem terapêutica integrativa em Dourados, MS.",
-  url: "https://gz-serenity.vercel.app",
-  telephone: "+55-67-99642-8381",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Dourados",
-    addressRegion: "MS",
-    addressCountry: "BR",
-  },
-  sameAs: ["https://www.instagram.com/grizi_capasso"],
-  founder: { "@type": "Person", name: "Grizi Capasso", jobTitle: "Massoterapeuta" },
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: SITE_NAME,
+      alternateName: ["GZ Serenity | Clínica Bella Face", "Grizi Capasso Massoterapeuta"],
+      url: SITE_URL,
+      inLanguage: "pt-BR",
+    },
+    {
+      "@type": "HealthAndBeautyBusiness",
+      "@id": `${SITE_URL}/#business`,
+      name: "GZ Serenity | Clínica Bella Face",
+      description: DESCRIPTION,
+      url: SITE_URL,
+      image: `${SITE_URL}/grizi-hero.jpg`,
+      logo: `${SITE_URL}/icon.svg`,
+      telephone: "+55-67-99642-8381",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Dourados",
+        addressRegion: "MS",
+        addressCountry: "BR",
+      },
+      areaServed: { "@type": "City", name: "Dourados" },
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          opens: "09:00",
+          closes: "19:00",
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: "Saturday",
+          opens: "09:00",
+          closes: "14:00",
+        },
+      ],
+      sameAs: ["https://www.instagram.com/grizi_capasso"],
+      founder: { "@type": "Person", name: "Grizi Capasso", jobTitle: "Massoterapeuta" },
+    },
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
